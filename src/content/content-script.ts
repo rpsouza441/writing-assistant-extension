@@ -29,7 +29,7 @@ const FRAME_COMMAND_MESSAGE = "TEXTPILOT_FRAME_COMMAND";
 const FRAME_COMMAND_RESULT_MESSAGE = "TEXTPILOT_FRAME_COMMAND_RESULT";
 const DEBUG_REQUEST_MESSAGE = "TEXTPILOT_DEBUG_SELECTION_REQUEST";
 const DEBUG_RESPONSE_MESSAGE = "TEXTPILOT_DEBUG_SELECTION_RESPONSE";
-const TEXTPILOT_UI_SELECTOR = "#textpilot-floating-button, #textpilot-floating-icon, #textpilot-inline-panel";
+const TEXTPILOT_UI_SELECTOR = "#textpilot-floating-icon, #textpilot-inline-panel";
 
 type FrameOpenPayload = {
   frameId: string;
