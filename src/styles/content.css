@@ -1,0 +1,267 @@
+#textpilot-floating-button.tp-floating-button {
+  all: initial;
+  align-items: center;
+  background: #1f5eff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  height: 34px;
+  justify-content: center;
+  line-height: 1;
+  position: fixed;
+  width: 34px;
+  z-index: 2147483647;
+}
+
+#textpilot-floating-button.tp-floating-button:hover {
+  background: #174bd1;
+}
+
+#textpilot-floating-button.tp-floating-button.tp-floating-button--dock {
+  border-radius: 8px;
+  bottom: 18px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.28);
+  font-size: 13px;
+  gap: 7px;
+  height: 38px;
+  left: auto;
+  min-width: 0;
+  padding: 0 12px;
+  right: 18px;
+  top: auto;
+  width: auto;
+}
+
+#textpilot-floating-button.tp-floating-button[hidden],
+#textpilot-floating-icon.tp-field-icon[hidden],
+#textpilot-inline-panel.tp-panel[hidden] {
+  display: none !important;
+}
+
+#textpilot-floating-icon.tp-field-icon {
+  all: initial;
+  align-items: center;
+  background: #1f5eff;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 7px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.22);
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  height: 28px;
+  justify-content: center;
+  line-height: 1;
+  position: fixed;
+  width: 28px;
+  z-index: 2147483647;
+}
+
+#textpilot-floating-icon.tp-field-icon:hover {
+  background: #174bd1;
+}
+
+#textpilot-floating-icon.tp-field-icon:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+#textpilot-inline-panel.tp-panel,
+#textpilot-inline-panel.tp-panel * {
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+#textpilot-inline-panel.tp-panel {
+  all: initial;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.24);
+  color: #172033;
+  display: block;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 14px;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: min(460px, calc(100vw - 36px));
+  z-index: 2147483647;
+}
+
+#textpilot-inline-panel .tp-panel-header {
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  margin: -2px 0 12px;
+  padding-bottom: 10px;
+}
+
+#textpilot-inline-panel .tp-panel-header strong {
+  color: #111827;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#textpilot-inline-panel .tp-panel-header span {
+  color: #64748b;
+  display: block;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+#textpilot-inline-panel .tp-icon-button {
+  align-items: center;
+  background: #f1f5f9;
+  border: 1px solid #dbe3ee;
+  border-radius: 6px;
+  color: #334155;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  width: 28px;
+}
+
+#textpilot-inline-panel .tp-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+}
+
+#textpilot-inline-panel .tp-field {
+  color: #334155;
+  display: grid;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+#textpilot-inline-panel .tp-field span {
+  color: #475569;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+#textpilot-inline-panel textarea,
+#textpilot-inline-panel select {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #111827;
+  font: inherit;
+  min-height: 34px;
+  outline: none;
+  padding: 8px 9px;
+  width: 100%;
+}
+
+#textpilot-inline-panel textarea {
+  max-height: 180px;
+  min-height: 76px;
+  resize: vertical;
+}
+
+#textpilot-inline-panel textarea:focus,
+#textpilot-inline-panel select:focus {
+  border-color: #1f5eff;
+  box-shadow: 0 0 0 3px rgba(31, 94, 255, 0.14);
+}
+
+#textpilot-inline-panel .tp-panel-actions,
+#textpilot-inline-panel .tp-panel-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+#textpilot-inline-panel button {
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #172033;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 650;
+  min-height: 34px;
+  padding: 7px 10px;
+}
+
+#textpilot-inline-panel button:hover:not(:disabled) {
+  background: #eef2f7;
+}
+
+#textpilot-inline-panel button.tp-primary {
+  background: #1f5eff;
+  border-color: #1f5eff;
+  color: #ffffff;
+}
+
+#textpilot-inline-panel button.tp-primary:hover:not(:disabled) {
+  background: #174bd1;
+}
+
+#textpilot-inline-panel button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+#textpilot-inline-panel .tp-status {
+  color: #475569;
+  min-height: 20px;
+  padding: 7px 0;
+}
+
+#textpilot-inline-panel .tp-guard {
+  margin-top: 8px;
+}
+
+#textpilot-inline-panel .tp-guard-title {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 6px;
+  color: #9a3412;
+  margin: 0 0 6px;
+  padding: 8px;
+}
+
+#textpilot-inline-panel .tp-guard-list {
+  color: #7c2d12;
+  margin: 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 560px) {
+  #textpilot-inline-panel.tp-panel {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
+  }
+
+  #textpilot-inline-panel .tp-grid {
+    grid-template-columns: 1fr;
+  }
+}

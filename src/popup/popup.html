@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TextPilot</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header>
+        <div>
+          <h1>TextPilot</h1>
+          <p>Assistente de escrita corporativa</p>
+        </div>
+      </header>
+
+      <label>
+        <span>Provedor</span>
+        <select id="provider"></select>
+      </label>
+      <p id="providerHelp" class="provider-help"></p>
+
+      <label>
+        <span>URL base da API</span>
+        <input id="baseUrl" type="url" placeholder="https://openrouter.ai/api/v1" />
+      </label>
+
+      <label>
+        <span>Modelo</span>
+        <input id="model" type="text" placeholder="openai/gpt-4o-mini" />
+      </label>
+
+      <label>
+        <span>Chave da API</span>
+        <input id="apiKey" type="password" autocomplete="off" placeholder="Nao fica no content script" />
+      </label>
+
+      <div class="actions">
+        <button id="useSelection" type="button" class="primary">Usar seleção atual</button>
+        <button id="save" type="button" class="primary">Salvar</button>
+        <button id="openOptions" type="button">Opcoes</button>
+      </div>
+
+      <section class="shortcut-box">
+        <strong>Atalho</strong>
+        <p id="shortcutStatus"></p>
+        <button id="openShortcuts" type="button">Configurar atalhos</button>
+      </section>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>

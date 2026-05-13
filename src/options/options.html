@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TextPilot - Opcoes</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="options-shell">
+      <header class="page-header">
+        <div>
+          <h1>TextPilot</h1>
+          <p>Configuracoes da extensao de escrita corporativa</p>
+        </div>
+      </header>
+
+      <form id="settingsForm">
+        <section class="section">
+          <h2>IA</h2>
+          <div class="form-grid">
+            <label>
+              <span>Provedor de IA</span>
+              <select id="provider"></select>
+            </label>
+
+            <div class="provider-help">
+              <span>Link util</span>
+              <p id="providerHelp"></p>
+            </div>
+
+            <label>
+              <span>URL base da API</span>
+              <input id="baseUrl" type="url" placeholder="https://openrouter.ai/api/v1" />
+            </label>
+
+            <label>
+              <span>Modelo</span>
+              <input id="model" type="text" placeholder="openai/gpt-4o-mini" />
+            </label>
+
+            <label>
+              <span>Chave da API</span>
+              <input id="apiKey" type="password" autocomplete="off" />
+            </label>
+
+            <label>
+              <span>Endpoint Ollama</span>
+              <select id="ollamaEndpointType"></select>
+            </label>
+          </div>
+
+          <label>
+            <span>Prompt padrao personalizado</span>
+            <textarea id="customPrompt" rows="5" placeholder="Instrucao adicional opcional para adaptar o estilo."></textarea>
+          </label>
+        </section>
+
+        <section class="section">
+          <h2>Preferencias</h2>
+          <div class="form-grid">
+            <label>
+              <span>Idioma padrao</span>
+              <select id="defaultLanguage"></select>
+            </label>
+
+            <label>
+              <span>Tom padrao</span>
+              <select id="defaultTone"></select>
+            </label>
+          </div>
+
+          <label class="check-row">
+            <input id="sensitiveDataProtectionEnabled" type="checkbox" />
+            <span>Habilitar protecao contra dados sensiveis</span>
+          </label>
+
+          <label class="check-row">
+            <input id="floatingButtonEnabled" type="checkbox" />
+            <span>Habilitar botao flutuante</span>
+          </label>
+        </section>
+
+        <section class="section">
+          <h2>Dominios</h2>
+          <div class="form-grid">
+            <label>
+              <span>Dominios bloqueados</span>
+              <textarea id="blockedDomains" rows="5" placeholder="exemplo.com&#10;*.interno.local"></textarea>
+            </label>
+
+            <label>
+              <span>Dominios permitidos</span>
+              <textarea id="allowedDomains" rows="5" placeholder="Deixe vazio para permitir todos, exceto bloqueados."></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Atalho de teclado</h2>
+          <div class="shortcut-settings">
+            <p id="shortcutStatus"></p>
+            <button id="openShortcuts" type="button">Abrir atalhos do Chrome</button>
+          </div>
+          <p class="hint">O Chrome controla atalhos de extensoes. O TextPilot apenas detecta e usa o atalho registrado.</p>
+        </section>
+
+        <div class="sticky-actions">
+          <button type="submit" class="primary">Salvar configuracoes</button>
+          <button id="reset" type="button">Restaurar padroes</button>
+          <p id="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </main>
+
+    <script type="module" src="./options.ts"></script>
+  </body>
+</html>

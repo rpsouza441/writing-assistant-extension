@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "TextPilot",
+  "version": "0.1.0",
+  "description": "Assistente interno para melhorar textos selecionados em campos de escrita.",
+  "minimum_chrome_version": "114",
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "TextPilot"
+  },
+  "options_page": "src/options/options.html",
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "clipboardWrite", "contextMenus", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content-script.js"],
+      "css": ["styles/content.css"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "commands": {
+    "textpilot-open-panel": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Abrir TextPilot com a selecao atual"
+    }
+  }
+}
