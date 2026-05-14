@@ -186,7 +186,7 @@ function bindRuntimeCommands(): void {
     const opened = openPanelFromCommand(String(message.payload?.selectedText ?? ""));
     sendResponse({
       ok: opened,
-      message: opened ? "Painel aberto na pagina." : "Selecione um texto ou clique em um campo editavel antes de usar o assistente."
+      message: opened ? "Painel aberto na pagina." : "Selecione um texto ou clique em um campo editavel antes de usar o Message Refiner."
     });
     return false;
   });
@@ -255,7 +255,7 @@ function installDebugHelper(): void {
         return new Promise((resolve) => {
           const timer = window.setTimeout(() => {
             window.removeEventListener("message", onMessage);
-            resolve({ error: "TextPilot nao respondeu neste contexto." });
+            resolve({ error: "Message Refiner nao respondeu neste contexto." });
           }, 1500);
 
           function onMessage(event) {
@@ -299,7 +299,7 @@ function showIconForCurrentEditor(): void {
     return;
   }
 
-  floatingIcon.show(activeContext.rect);
+  floatingIcon.show(activeContext.element, activeContext.rect);
 }
 
 async function openPanelFromIcon(): Promise<void> {

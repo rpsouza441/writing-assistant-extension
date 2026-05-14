@@ -127,7 +127,7 @@ export class InlinePanel {
   setLoading(isLoading: boolean): void {
     this.improveButton.disabled = isLoading;
     this.improveButton.textContent = isLoading
-      ? "Enviando..."
+      ? "Refinando..."
       : this.warningConfirmationRequired
         ? "Enviar mesmo assim"
         : "Enviar para IA";
@@ -152,13 +152,13 @@ export class InlinePanel {
 
   requireWarningConfirmation(findings: SensitiveDataFinding[]): void {
     this.warningConfirmationRequired = true;
-    this.renderFindings(findings, "Revise os alertas abaixo. Para enviar mesmo assim, clique novamente.");
+    this.renderFindings(findings, "Sensitive information detected. Revise os alertas antes de enviar.");
     this.setLoading(false);
   }
 
   blockForSensitiveData(findings: SensitiveDataFinding[]): void {
     this.warningConfirmationRequired = false;
-    this.renderFindings(findings, "Envio bloqueado por possivel dado sensivel.");
+    this.renderFindings(findings, "Sensitive information detected. Envio bloqueado por possivel dado sensivel.");
     this.setError("Remova os dados sensiveis ou desative a protecao nas opcoes se for apropriado.");
   }
 
@@ -229,7 +229,7 @@ export class InlinePanel {
     const element = this.root.querySelector<TElement>(selector);
 
     if (!element) {
-      throw new Error(`Elemento da UI TextPilot nao encontrado: ${selector}`);
+      throw new Error(`Elemento da UI Message Refiner nao encontrado: ${selector}`);
     }
 
     return element;
@@ -239,8 +239,8 @@ export class InlinePanel {
     return `
       <div class="tp-panel-header">
         <div>
-          <strong>TextPilot</strong>
-          <span>assistente de escrita</span>
+          <strong>Message Refiner</strong>
+          <span>Refinar o texto selecionado</span>
         </div>
         <button type="button" class="tp-icon-button" data-role="close" aria-label="Fechar">x</button>
       </div>

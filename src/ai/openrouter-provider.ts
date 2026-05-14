@@ -26,8 +26,8 @@ export class OpenRouterProvider implements AiProvider {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${settings.apiKey}`,
-        "HTTP-Referer": "https://textpilot.local",
-        "X-Title": "TextPilot"
+        "HTTP-Referer": "https://message-refiner.local",
+        "X-Title": "Message Refiner"
       },
       body: JSON.stringify({
         model: settings.model,

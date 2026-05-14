@@ -3,15 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TextPilot</title>
+    <title>Message Refiner</title>
     <link rel="stylesheet" href="./popup.css" />
   </head>
   <body>
     <main class="popup-shell">
       <header>
-        <div>
-          <h1>TextPilot</h1>
-          <p>Assistente de escrita corporativa</p>
+        <div class="brand-row">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <h1>Message Refiner</h1>
+            <p>Refinar o texto selecionado</p>
+          </div>
         </div>
       </header>
 
@@ -39,7 +42,7 @@
       <div class="actions">
         <button id="useSelection" type="button" class="primary">Usar seleção atual</button>
         <button id="save" type="button" class="primary">Salvar</button>
-        <button id="openOptions" type="button">Opcoes</button>
+        <button id="openOptions" type="button">Configuracoes</button>
       </div>
 
       <section class="shortcut-box">
@@ -48,6 +51,7 @@
         <button id="openShortcuts" type="button">Configurar atalhos</button>
       </section>
 
+      <p class="privacy-note">O texto so e enviado apos sua confirmacao.</p>
       <p id="status" class="status" aria-live="polite"></p>
     </main>
 

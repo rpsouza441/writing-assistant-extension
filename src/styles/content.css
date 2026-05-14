@@ -1,4 +1,5 @@
 #textpilot-floating-icon.tp-field-icon[hidden],
+#textpilot-floating-button.tp-floating-button[hidden],
 #textpilot-inline-panel.tp-panel[hidden] {
   display: none !important;
 }
@@ -6,10 +7,10 @@
 #textpilot-floating-icon.tp-field-icon {
   all: initial;
   align-items: center;
-  background: #1f5eff;
+  background: #4338ca;
   border: 1px solid rgba(255, 255, 255, 0.36);
-  border-radius: 7px;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.22);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.16);
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
@@ -18,19 +19,94 @@
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 10px;
   font-weight: 800;
-  height: 28px;
+  height: 34px;
   justify-content: center;
   line-height: 1;
   position: fixed;
-  width: 28px;
+  width: 34px;
   z-index: 2147483647;
 }
 
+#textpilot-floating-icon.tp-field-icon svg {
+  display: block;
+  fill: none;
+  height: 20px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 20px;
+}
+
 #textpilot-floating-icon.tp-field-icon:hover {
-  background: #174bd1;
+  background: #2a14b4;
 }
 
 #textpilot-floating-icon.tp-field-icon:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+#textpilot-floating-button.tp-floating-button {
+  all: initial;
+  align-items: center;
+  background: #4338ca;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.16);
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: 750;
+  gap: 6px;
+  height: 34px;
+  justify-content: center;
+  line-height: 1;
+  min-width: 34px;
+  padding: 0 10px;
+  position: fixed;
+  z-index: 2147483647;
+}
+
+#textpilot-floating-button.tp-floating-button svg {
+  display: block;
+  fill: none;
+  height: 18px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 18px;
+}
+
+#textpilot-floating-button.tp-floating-button span {
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+#textpilot-floating-button.tp-floating-button:not(.tp-floating-button--dock) {
+  padding: 0;
+  width: 34px;
+}
+
+#textpilot-floating-button.tp-floating-button--dock {
+  bottom: 18px;
+  right: 18px;
+  padding: 0;
+  width: 34px;
+}
+
+#textpilot-floating-button.tp-floating-button:hover {
+  background: #2a14b4;
+}
+
+#textpilot-floating-button.tp-floating-button:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
@@ -44,10 +120,10 @@
 #textpilot-inline-panel.tp-panel {
   all: initial;
   background: #ffffff;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #c7c4d7;
   border-radius: 8px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.24);
-  color: #172033;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08), 0 24px 60px rgba(15, 23, 42, 0.16);
+  color: #0b1c30;
   display: block;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -65,22 +141,24 @@
 
 #textpilot-inline-panel .tp-panel-header {
   align-items: center;
-  border-bottom: 1px solid #e2e8f0;
+  background: #f8f9ff;
+  border: 1px solid #e5eeff;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   margin: -2px 0 12px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 #textpilot-inline-panel .tp-panel-header strong {
-  color: #111827;
+  color: #0b1c30;
   display: block;
   font-size: 14px;
   font-weight: 700;
 }
 
 #textpilot-inline-panel .tp-panel-header span {
-  color: #64748b;
+  color: #464554;
   display: block;
   font-size: 12px;
   margin-top: 1px;
@@ -88,10 +166,10 @@
 
 #textpilot-inline-panel .tp-icon-button {
   align-items: center;
-  background: #f1f5f9;
-  border: 1px solid #dbe3ee;
+  background: #ffffff;
+  border: 1px solid #c7c4d7;
   border-radius: 6px;
-  color: #334155;
+  color: #464554;
   cursor: pointer;
   display: inline-flex;
   font: inherit;
@@ -108,14 +186,14 @@
 }
 
 #textpilot-inline-panel .tp-field {
-  color: #334155;
+  color: #0b1c30;
   display: grid;
   gap: 5px;
   margin-bottom: 10px;
 }
 
 #textpilot-inline-panel .tp-field span {
-  color: #475569;
+  color: #464554;
   font-size: 12px;
   font-weight: 650;
 }
@@ -123,9 +201,9 @@
 #textpilot-inline-panel textarea,
 #textpilot-inline-panel select {
   background: #ffffff;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  color: #111827;
+  border: 1px solid #c7c4d7;
+  border-radius: 8px;
+  color: #0b1c30;
   font: inherit;
   min-height: 34px;
   outline: none;
@@ -141,8 +219,8 @@
 
 #textpilot-inline-panel textarea:focus,
 #textpilot-inline-panel select:focus {
-  border-color: #1f5eff;
-  box-shadow: 0 0 0 3px rgba(31, 94, 255, 0.14);
+  border-color: #4338ca;
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.14);
 }
 
 #textpilot-inline-panel .tp-panel-actions,
@@ -155,10 +233,10 @@
 
 #textpilot-inline-panel button {
   align-items: center;
-  background: #f8fafc;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  color: #172033;
+  background: #ffffff;
+  border: 1px solid #c7c4d7;
+  border-radius: 8px;
+  color: #0b1c30;
   cursor: pointer;
   display: inline-flex;
   font: inherit;
@@ -168,17 +246,17 @@
 }
 
 #textpilot-inline-panel button:hover:not(:disabled) {
-  background: #eef2f7;
+  background: #eff4ff;
 }
 
 #textpilot-inline-panel button.tp-primary {
-  background: #1f5eff;
-  border-color: #1f5eff;
+  background: #4338ca;
+  border-color: #4338ca;
   color: #ffffff;
 }
 
 #textpilot-inline-panel button.tp-primary:hover:not(:disabled) {
-  background: #174bd1;
+  background: #2a14b4;
 }
 
 #textpilot-inline-panel button:disabled {
@@ -187,7 +265,7 @@
 }
 
 #textpilot-inline-panel .tp-status {
-  color: #475569;
+  color: #464554;
   min-height: 20px;
   padding: 7px 0;
 }
@@ -197,16 +275,16 @@
 }
 
 #textpilot-inline-panel .tp-guard-title {
-  background: #fff7ed;
-  border: 1px solid #fed7aa;
+  background: #ffdad6;
+  border: 1px solid rgba(186, 26, 26, 0.28);
   border-radius: 6px;
-  color: #9a3412;
+  color: #93000a;
   margin: 0 0 6px;
   padding: 8px;
 }
 
 #textpilot-inline-panel .tp-guard-list {
-  color: #7c2d12;
+  color: #93000a;
   margin: 0;
   padding-left: 18px;
 }

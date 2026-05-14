@@ -1,10 +1,10 @@
-# TextPilot
+# Message Refiner
 
-TextPilot e uma extensao Chrome Manifest V3 para uso pessoal ou interno que ajuda a reescrever textos selecionados em campos de escrita. O foco e transformar textos informais em mensagens mais claras, profissionais, objetivas e adequadas ao ambiente corporativo.
+Message Refiner e uma extensao Chrome Manifest V3 para uso pessoal ou interno que ajuda a refinar textos selecionados em campos de escrita. O foco e transformar textos informais em mensagens mais claras, profissionais, objetivas e adequadas ao ambiente corporativo.
 
 ## 1. Objetivo do projeto
 
-- Melhorar trechos selecionados pelo usuario em qualquer site.
+- Refinar trechos selecionados pelo usuario em qualquer site.
 - Evitar comportamento de keylogger: a extensao nao captura tudo que o usuario digita.
 - Enviar texto para IA somente apos acao explicita do usuario.
 - Manter chave de API fora do content script e da pagina visitada.
@@ -67,7 +67,7 @@ Dependendo da configuracao local, chamadas a Ollama podem exigir ajuste de CORS,
 ## 8. Como usar
 
 1. Escreva um texto em `textarea`, `input text`, `input search`, `contenteditable` ou editor rico detectavel.
-2. Clique no campo. A extensao mostra um icone pequeno `TP` no canto inferior direito do campo ativo.
+2. Clique no campo. A extensao mostra um icone de edicao no canto inferior direito do campo ativo.
 3. Se quiser melhorar apenas um trecho, selecione o texto antes de clicar no icone.
 4. Revise o texto que sera enviado.
 5. Escolha acao, idioma e tom.
@@ -79,12 +79,12 @@ O comportamento padrao e adicionar o texto revisado ao final do campo original. 
 
 ## 9. Modos de UX
 
-TextPilot usa uma estrategia em camadas para evitar depender de um unico tipo de campo:
+Message Refiner usa uma estrategia em camadas para evitar depender de um unico tipo de campo:
 
 1. `Icone no campo ativo`: usado em `textarea`, `input`, `contenteditable` e editores ricos detectaveis; o icone aparece no canto inferior direito do campo focado.
 2. `Iframes`: cada frame renderiza seu proprio icone dentro do proprio documento. Ao clicar, o painel tenta abrir no frame principal para evitar ficar preso em editores pequenos.
 3. `Extension Popup`: o botao `Usar selecao atual` no popup abre o painel na pagina atual quando ha selecao ou campo editavel em foco.
-4. `Menu de contexto`: selecione um texto, clique com o botao direito e use `TextPilot: melhorar texto selecionado`.
+4. `Menu de contexto`: selecione um texto, clique com o botao direito e use `Message Refiner: refine selected text`.
 5. `Atalho de teclado`: por padrao, `Ctrl+Shift+F` no Windows/Linux e `Command+Shift+F` no macOS abrem o painel com a selecao atual quando o Chrome registra o atalho. Se houver conflito, configure em `chrome://extensions/shortcuts`.
 
 Quando a extensao nao consegue inserir automaticamente com seguranca, ela copia o resultado para a area de transferencia e informa o usuario.
@@ -157,7 +157,7 @@ console.log({
 
 Se `document.activeElement` for um `iframe`, abra o frame no DevTools ou use `all_frames: true`, pois a selecao real esta no documento interno do editor.
 
-A extensao tambem expõe um helper de diagnostico seguro, sem retornar o texto selecionado. Depois de selecionar um trecho, rode:
+A extensao tambem expoe um helper de diagnostico seguro, sem retornar o texto selecionado. O nome tecnico do helper permanece `__textpilotDebugSelection` para compatibilidade interna. Depois de selecionar um trecho, rode:
 
 ```js
 await window.__textpilotDebugSelection?.()

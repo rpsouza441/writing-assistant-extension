@@ -67,7 +67,7 @@ async function save(): Promise<void> {
     apiKey: apiKeyInput.value
   });
 
-  statusElement.textContent = "Configuracoes salvas.";
+  statusElement.textContent = "Configuracoes do Message Refiner salvas.";
 }
 
 async function openPanelForCurrentSelection(): Promise<void> {
@@ -80,12 +80,12 @@ async function openPanelForCurrentSelection(): Promise<void> {
       const error = chrome.runtime.lastError;
 
       if (error) {
-        statusElement.textContent = error.message || "Nao foi possivel acionar o assistente.";
+        statusElement.textContent = error.message || "Nao foi possivel acionar o Message Refiner.";
         return;
       }
 
       if (!response) {
-        statusElement.textContent = "Nao foi possivel acionar o assistente.";
+        statusElement.textContent = "Nao foi possivel acionar o Message Refiner.";
         return;
       }
 

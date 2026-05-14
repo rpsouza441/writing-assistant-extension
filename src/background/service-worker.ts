@@ -21,8 +21,8 @@ const CONTEXT_MENU_ID = "textpilot-improve-selection";
 const CONTENT_SCRIPT_FILE = "content/content-script.js";
 const CONTENT_CSS_FILE = "styles/content.css";
 const ACTIVATION_BLOCKED_MESSAGE =
-  "Nao foi possivel ativar o assistente nesta pagina. Algumas paginas internas do navegador ou paginas protegidas nao permitem injecao de extensoes.";
-const SELECT_TEXT_MESSAGE = "Selecione um texto ou clique em um campo editavel antes de usar o assistente.";
+  "Nao foi possivel ativar o Message Refiner nesta pagina. Algumas paginas internas do navegador ou paginas protegidas nao permitem injecao de extensoes.";
+const SELECT_TEXT_MESSAGE = "Selecione um texto ou clique em um campo editavel antes de usar o Message Refiner.";
 
 chrome.runtime.onInstalled.addListener(() => {
   createContextMenu();
@@ -283,7 +283,7 @@ function createContextMenu(): void {
     void chrome.runtime.lastError;
     chrome.contextMenus.create({
       id: CONTEXT_MENU_ID,
-      title: "TextPilot: melhorar texto selecionado",
+      title: "Message Refiner: refine selected text",
       contexts: ["selection"]
     });
   });

@@ -93,7 +93,7 @@ async function save(): Promise<void> {
     allowedDomains: allowedDomainsInput.value.split(/\n/g)
   });
 
-  statusElement.textContent = "Configuracoes salvas.";
+  statusElement.textContent = "Configuracoes do Message Refiner salvas.";
 }
 
 async function reset(): Promise<void> {

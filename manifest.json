@@ -1,12 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "TextPilot",
+  "name": "Message Refiner",
+  "short_name": "Msg Refiner",
   "version": "0.1.0",
-  "description": "Assistente interno para melhorar textos selecionados em campos de escrita.",
+  "description": "Refine selected text into clear, professional messages using AI.",
   "minimum_chrome_version": "114",
   "action": {
     "default_popup": "src/popup/popup.html",
-    "default_title": "TextPilot"
+    "default_title": "Message Refiner"
   },
   "options_page": "src/options/options.html",
   "background": {
@@ -35,7 +36,7 @@
         "default": "Ctrl+Shift+F",
         "mac": "Command+Shift+F"
       },
-      "description": "Abrir TextPilot com a selecao atual"
+      "description": "Abrir Message Refiner com a selecao atual"
     }
   }
 }
