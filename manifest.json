@@ -5,9 +5,21 @@
   "version": "0.1.0",
   "description": "Refine selected text into clear, professional messages using AI.",
   "minimum_chrome_version": "114",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
   "action": {
     "default_popup": "src/popup/popup.html",
-    "default_title": "Message Refiner"
+    "default_title": "Message Refiner",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
   },
   "options_page": "src/options/options.html",
   "background": {

@@ -1,0 +1,23 @@
+# Chrome Web Store Beta Checklist
+
+- [ ] `npm run build` executed.
+- [ ] `npm run package:check` passed.
+- [ ] `npm run package:zip` generated the ZIP.
+- [ ] ZIP contains `manifest.json` at the root.
+- [ ] Manifest is MV3.
+- [ ] Manifest name is `Message Refiner`.
+- [ ] Manifest description is concise and does not label the installed extension as beta.
+- [ ] 128x128 icon is present.
+- [ ] Screenshots are prepared.
+- [ ] Small promo tile 440x280 is prepared.
+- [ ] Privacy Policy is reviewed.
+- [ ] Store Listing is reviewed in English and Portuguese.
+- [ ] Permissions are reviewed and justified.
+- [ ] Local installation test completed.
+- [ ] Sensitive-data warning tested.
+- [ ] OpenRouter tested.
+- [ ] Ollama/local tested, if applicable.
+- [ ] Custom endpoint tested, if applicable.
+- [ ] No `.env`, `.pem`, `.git`, `node_modules`, or private keys are inside the ZIP.
+- [ ] Upload completed in Chrome Developer Dashboard.
+- [ ] Visibility set to Private or Unlisted for beta.

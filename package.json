@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "package:zip": "npm run build && node scripts/package-extension.mjs",
+    "package:check": "node scripts/check-extension-package.mjs",
     "typecheck": "tsc --noEmit",
     "dev": "vite build --watch"
   },

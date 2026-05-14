@@ -118,7 +118,33 @@ Para uso pessoal ou interno, carregar `dist/` em modo desenvolvedor pode ser suf
 - Consentimento claro antes de enviar texto a terceiros.
 - Possivel troca de chave local por backend intermediario.
 
-## 14. Proximos passos recomendados
+## 14. Chrome Web Store beta package
+
+A versao beta deve manter o nome publico `Message Refiner` no `manifest.json` e ser publicada inicialmente como `Private` ou `Unlisted` no Chrome Developer Dashboard.
+
+```bash
+npm run build
+npm run package:check
+npm run package:zip
+```
+
+O comando `package:zip` gera um arquivo em `releases/` com o conteudo de `dist/` diretamente na raiz do ZIP. A Chrome Web Store usa ZIP para submissao, nao CRX. Nao envie `.pem`, `.env`, `node_modules`, `.git`, `dist.zip` antigo ou chaves privadas.
+
+Os textos auxiliares de publicacao ficam em `store-assets/`, incluindo Store Listing, Privacy Policy, instrucoes de teste, release notes e checklist. Screenshots reais e imagem promocional ainda precisam ser preparados manualmente antes do upload.
+
+## 15. Politica de Privacidade publica
+
+A Politica de Privacidade publica fica em `docs/privacy-policy.md`.
+
+Para GitHub Pages, use uma URL equivalente a:
+
+```text
+https://<usuario>.github.io/<repositorio>/privacy-policy
+```
+
+Configure essa URL no campo de Privacy Policy da Chrome Web Store depois que a pagina estiver publicada.
+
+## 16. Proximos passos recomendados
 
 - Criar adaptadores especificos para editores usados internamente.
 - Adicionar testes unitarios para `SensitiveDataGuard`, `PromptBuilder` e adaptadores.

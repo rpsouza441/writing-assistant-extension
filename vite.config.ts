@@ -11,10 +11,16 @@ function copyExtensionAssets(): Plugin {
     closeBundle() {
       const distDir = resolve(rootDir, "dist");
       const stylesDir = resolve(distDir, "styles");
+      const iconsDir = resolve(distDir, "icons");
 
       mkdirSync(stylesDir, { recursive: true });
+      mkdirSync(iconsDir, { recursive: true });
       copyFileSync(resolve(rootDir, "manifest.json"), resolve(distDir, "manifest.json"));
       copyFileSync(resolve(rootDir, "src/styles/content.css"), resolve(stylesDir, "content.css"));
+      copyFileSync(resolve(rootDir, "icons/icon-16.png"), resolve(iconsDir, "icon-16.png"));
+      copyFileSync(resolve(rootDir, "icons/icon-32.png"), resolve(iconsDir, "icon-32.png"));
+      copyFileSync(resolve(rootDir, "icons/icon-48.png"), resolve(iconsDir, "icon-48.png"));
+      copyFileSync(resolve(rootDir, "icons/icon-128.png"), resolve(iconsDir, "icon-128.png"));
 
       const contentScript = readFileSync(resolve(distDir, "content/content-script.js"), "utf8");
 
